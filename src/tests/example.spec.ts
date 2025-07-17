@@ -12,18 +12,13 @@ test('get started link', async ({ page }) => {
 
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
-  await page.getByRole('link', { name: 'Get started' }).click();
+
 
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-  await page.context().browser()?.close();
+
 
 });
 
-test("goto vs launch", async({ page }) => {
-  await page.goto('https://www.automationexercise.com/login')
-  const browser = await firefox.launch({headless : false});
-  await page.goto('https://www.automationexercise.com/login');
-  await browser.close();
-})
+
 
